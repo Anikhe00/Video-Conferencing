@@ -1,0 +1,302 @@
+/* Base styles and resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-bg: #151718;
+    --secondary-bg: #2d2e32;
+    --text-primary: #ffffff;
+    --text-secondary: #a1a1a1;
+    --accent-color: #2563eb;
+    --danger-color: #dc2626;
+    --grey: #5F666D;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: var(--primary-bg);
+    min-height: 100vh;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    padding: 1rem 2rem;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0.5rem;
+    color: var(--text-primary);
+}
+
+.project-title {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+
+.thumbnail .participant-initials {
+    font-size: 1.5rem;
+}
+
+.video-element {
+    width: 100%;
+    height: 100%;
+    background-color: var(--secondary-bg);
+}
+
+.active-speaker {
+    border: 2px solid var(--accent-color);
+}
+
+.video-thumbnails {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.5rem;
+    height: 7.5rem;
+    overflow-x: auto;
+}
+
+.video-thumbnails::-webkit-scrollbar {
+    height: 4px;
+}
+
+.video-thumbnails::-webkit-scrollbar-track {
+    background: var(--primary-bg);
+}
+
+.video-thumbnails::-webkit-scrollbar-thumb {
+    background: var(--secondary-bg);
+    border-radius: 2px;
+}
+
+.mic {
+    width: fit-content;
+    height: auto;
+    position: relative; /* Keep content above the overlay */
+    z-index: 2;
+}
+
+.mic img {
+    width: 1rem;
+    height: 1rem;
+}
+
+
+.video-grid {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem 0;
+    background-color: var(--primary-bg);
+    min-height: 0;
+}
+
+.video-container {
+    width: 100%;
+    height: 100%;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    position: relative;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    background-color: var(--secondary-bg);
+    color: var(--text-primary);
+}
+
+.main-video {
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+    max-height: calc(100vh - 7.5rem);
+    border-radius: 0.75rem;
+    overflow: hidden;
+}
+
+.main-video img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-overlay {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+}
+
+.participant-name {
+    font-size: 0.875rem;
+    font-weight: 500;
+    position: relative; /* Keep content above the overlay */
+    z-index: 2;
+}
+
+.abdulqudus {
+    background-image: url(/Images/Abdulqudus\ AG.jpg);
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black overlay */
+    z-index: 1;
+}
+
+.ridwan {
+    background-image: url(/Images/Ridwan.jpg);
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
+}
+
+.ralph {
+    background-image: url(/Images/Ralph.jpg);
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
+}
+
+.zahra {
+    background-image: url(/Images/Zahra.jpg);
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
+}
+
+.courtney {
+    background-image: url(/Images/Oyin.jpg);
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
+}
+
+.devon {
+    background-image: url(/Images/Marvis.jpg);
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
+}
+
+.control-bar {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 1rem;
+    padding: 0.5rem 0;
+}
+
+.control-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--grey);
+    border: none;
+    border-radius: 99rem;
+}
+
+.control-btn img {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.leave-call {
+    width: fit-content;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    background-color: var(--danger-color);
+    border: none;
+    border-radius: 99rem;
+}
+
+
+/* Tablet View */
+@media screen and (max-width:1120px) {
+    
+
+    .courtney {
+        background-image: url(/Images/Oyin.jpg);
+        background-size: cover;
+        background-position: center; 
+        background-repeat: no-repeat;
+        display: none !important;
+    }
+
+    .ridwan {
+        background-image: url(/Images/Ridwan.jpg);
+        background-size: cover;
+        background-position: center; 
+        background-repeat: no-repeat;
+        display: none !important;
+    }
+
+    .devon {
+        background-image: url(/Images/Marvis.jpg);
+        background-size: cover;
+        background-position: center; 
+        background-repeat: no-repeat;
+        display: none !important;
+    }
+
+    .video-thumbnails {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 0.5rem;
+        height: 10rem;
+        overflow-x: auto;
+    }
+    
+    .video-container {
+        width: 100%;
+        height: 100%;
+        padding: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        position: relative;
+        border-radius: 0.75rem;
+        overflow: hidden;
+        background-color: var(--secondary-bg);
+        color: var(--text-primary);
+    }
+
+    .main-video {
+        flex: 1;
+        min-height: 0;
+        width: 100%;
+        max-height: calc(100vh - 10rem);
+        border-radius: 0.75rem;
+        overflow: hidden;
+    }
+}
